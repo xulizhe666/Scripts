@@ -85,7 +85,7 @@ let concurrency = parseInt($.getval('Helge_0x00.Netflix_Concurrency')) || 10
   if (cacheFullPolicies.length <= 0 && status === STATUS_ORIGINAL_AVAILABLE) {
     let flag = getCountryFlagEmoji(region) ?? ''
     let regionName = REGIONS?.[region.toUpperCase()]?.chinese ?? ''
-    $.msg($.name, `${actualNode}`, `没有支持完整解锁的节点，该节点仅支持 Netflix 自制剧 ➟ ${flag} ${regionName}`)
+    $.msge($.name, `${actualNode}`, `没有支持完整解锁的节点，该节点仅支持 Netflix 自制剧 ➟ ${flag} ${regionName}`)
     return
   }
 

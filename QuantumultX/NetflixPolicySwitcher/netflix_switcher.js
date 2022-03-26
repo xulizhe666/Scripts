@@ -85,7 +85,7 @@ let concurrency = parseInt($.getval('Helge_0x00.Netflix_Concurrency')) || 10
   if (cacheFullPolicies.length <= 0 && status === STATUS_ORIGINAL_AVAILABLE) {
     let flag = getCountryFlagEmoji(region) ?? ''
     let regionName = REGIONS?.[region.toUpperCase()]?.chinese ?? ''
-    $.msge($.name, `${actualNode}`, `没有支持完整解锁的节点，该节点仅支持 Netflix 自制剧 ➟ ${flag} ${regionName}`)
+    $.msg($.name, `${actualNode}`, `没有支持完整解锁的节点，该节点仅支持 Netflix 自制剧 ➟ ${flag} ${regionName}`)
     return
   }
 
@@ -105,12 +105,12 @@ let concurrency = parseInt($.getval('Helge_0x00.Netflix_Concurrency')) || 10
     newStatus === STATUS_FULL_AVAILABLE
       ? `完整支持 Netflix ➟ ${flag} ${regionName}`
       : `没有支持完整解锁的节点，该节点仅支持 Netflix 自制剧 ➟ ${flag} ${regionName}`
-  $.msge($.name, `${curPolicyPath[curPolicyPath.length - 1]} ➟ ${switchPath[switchPath.length - 1]}`, msg)
+  $.msg($.name, `${curPolicyPath[curPolicyPath.length - 1]} ➟ ${switchPath[switchPath.length - 1]}`, msg)
 })()
   .catch(error => {
     console.log(error)
     if (typeof error === 'string') {
-      $.msge($.name, '', `${error} ⚠️`)
+      $.msg($.name, '', `${error} ⚠️`)
     }
   })
   .finally(() => {

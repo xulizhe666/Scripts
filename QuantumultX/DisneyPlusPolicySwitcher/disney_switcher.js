@@ -77,7 +77,7 @@ let concurrency = parseInt($.getval('Helge_0x00.Disney_Concurrency')) || 10
   let flag = getCountryFlagEmoji(newRegion) ?? ''
   let regionName = REGIONS?.[newRegion.toUpperCase()]?.chinese ?? ''
   console.log(`\n切换策略：${curPolicyPath.join(' ➤ ')} ➟ ${switchPath.join(' ➤ ')}`)
-  $.msge($.name, `${curPolicyPath[curPolicyPath.length - 1]} ➟ ${switchPath[switchPath.length - 1]}`, `该节点支持 Disney+ ➟ ${flag} ${regionName}`)
+  $.msg($.name, `${curPolicyPath[curPolicyPath.length - 1]} ➟ ${switchPath[switchPath.length - 1]}`, `该节点支持 Disney+ ➟ ${flag} ${regionName}`)
 })()
   .catch(error => {
     console.log(error)
